@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    internal class DaoSucursal
+    public class DaoSucursal
     {
         AccesoDatos ds = new AccesoDatos();
 
