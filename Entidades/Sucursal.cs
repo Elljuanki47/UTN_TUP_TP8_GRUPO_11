@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Sucursal
+    public class Sucursal
     {
         private int IdSucursal;
         private String NombreSucursal;
