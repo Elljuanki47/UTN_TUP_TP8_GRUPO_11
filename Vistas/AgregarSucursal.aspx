@@ -54,6 +54,7 @@
             Text="Provincia:" />
         <asp:DropDownList ID="ddlProvincia"
             runat="server" />
+        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Seleccione una provincia" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
         <br /><br />
     
         <asp:Label ID="lblDireccion" runat="server"
