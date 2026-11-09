@@ -19,5 +19,17 @@ namespace Datos
 
             return tabla;
         }
+
+        public DataTable FiltrarSucursal(int idSucursal)
+        {
+            String consulta =
+                "SELECT S.Id_Sucursal, S.NombreSucursal, S.DescripcionSucursal, P.DescripcionProvincia, S.DireccionSucursal " +
+                "FROM Sucursal S INNER JOIN Provincia P ON S.Id_ProvinciaSucursal = P.Id_Provincia " +
+                "WHERE S.Id_Sucursal = " + idSucursal;
+
+            DataTable tabla = ds.ObtenerTabla("Sucursal", consulta);
+
+            return tabla;
+        }
     }
 }
