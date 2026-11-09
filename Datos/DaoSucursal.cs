@@ -1,4 +1,4 @@
-﻿
+﻿using Entidades;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -55,6 +55,12 @@ namespace Datos
                 "WHERE S.Id_Sucursal = " + idSucursal;
 
             return ds.ObtenerTabla("Sucursal", consulta);
+        }
+        public int eliminarSucursal(Sucursal suc)
+        {
+            String consulta = "DELETE FROM Sucursal WHERE Id_Sucursal = " + suc.getIdSucursal();
+
+            return ds.EjecutarConsulta(consulta);
         }
     }
 }

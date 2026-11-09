@@ -13,5 +13,14 @@ namespace Entidades
         public string DescripcionSucursal { get; set; }
         public int Id_ProvinciaSucursal { get; set; }
         public string DireccionSucursal { get; set; }
+        public int getIdSucursal()
+        {
+            return Id_Sucursal;
+        }
+
+        public void setIdSucursal(int idSucursal)
+        {
+            Id_Sucursal = idSucursal;
+        }
     }
 }

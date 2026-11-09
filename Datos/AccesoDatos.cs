@@ -67,5 +67,18 @@ namespace Datos
                 conexion.Close();
             }
         }
+
+        public int EjecutarConsulta(String consulta)
+        {
+            SqlConnection conexion = ObtenerConexion();
+
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+
+            int filasAfectadas = comando.ExecuteNonQuery();
+
+            conexion.Close();
+
+            return filasAfectadas;
+        }
     }
 }

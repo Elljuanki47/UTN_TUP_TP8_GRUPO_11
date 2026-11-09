@@ -1,7 +1,8 @@
-﻿
+﻿using Entidades;
+using Datos;
+using Entidades;
 using System;
 using System.Data;
-using Datos;
 
 namespace Negocio
 {
@@ -37,6 +38,15 @@ namespace Negocio
             DaoSucursal dao = new DaoSucursal();
 
             return dao.FiltrarSucursal(idSucursal);
+        }
+        public int eliminarSucursal(int id)
+        {
+            Sucursal suc = new Sucursal();
+            suc.setIdSucursal(id);
+
+            DaoSucursal dao = new DaoSucursal();
+
+            return dao.eliminarSucursal(suc);
         }
     }
 }
