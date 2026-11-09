@@ -35,8 +35,16 @@
         <asp:RequiredFieldValidator
             ID="rfvNombre" runat="server"
             ControlToValidate="txtNombre"
-            ErrorMessage="Ingrese el nombre"
+            ErrorMessage="El nombre no puede quedar vacio"
             ForeColor="Red" />
+        <asp:RegularExpressionValidator
+            ID="revNombre"
+            runat="server"
+            ControlToValidate="txtNombre"
+            ValidationExpression=".*[a-zA-Z].*"
+            ErrorMessage="El nombre debe contener al menos una letra"
+            ForeColor="Red" />
+
         <br /><br />
     
         <asp:Label ID="lblDescripcion" runat="server"
@@ -46,7 +54,7 @@
         <asp:RequiredFieldValidator
             ID="rfvDescripcion" runat="server"
             ControlToValidate="txtDescripcion"
-            ErrorMessage="Ingrese la descripción"
+            ErrorMessage="La descripción no puede quedar vacia"
             ForeColor="Red" />
         <br /><br />
     
@@ -54,7 +62,7 @@
             Text="Provincia:" />
         <asp:DropDownList ID="ddlProvincia"
             runat="server" />
-        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Seleccione una provincia" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Debe seleccionar una provincia" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
         <br /><br />
     
         <asp:Label ID="lblDireccion" runat="server"
@@ -64,12 +72,13 @@
         <asp:RequiredFieldValidator
             ID="rfvDireccion" runat="server"
             ControlToValidate="txtDireccion"
-            ErrorMessage="Ingrese la dirección"
+            ErrorMessage="La direccion no puede quedar vacia"
             ForeColor="Red" />
         <br /><br />
     
         <asp:Button ID="btnGuardar" runat="server"
-            Text="Aceptar" />
+            Text="Aceptar"
+             OnClick="btnGuardar_Click" />
     
         <br /><br />
     

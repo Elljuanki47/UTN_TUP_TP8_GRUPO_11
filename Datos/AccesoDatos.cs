@@ -10,7 +10,7 @@ namespace Datos
 {
     internal class AccesoDatos
     {
-        String rutaBDSucursales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        public const String rutaBDSucursales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True; TrustServerCertificate=True";
 
         private SqlConnection ObtenerConexion()
         {
@@ -52,6 +52,20 @@ namespace Datos
             conexion.Close();
 
             return ds.Tables[nombreTabla];
+        }
+        public int EjecutarComando(SqlCommand comando)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            comando.Connection = conexion;
+
+            try
+            {
+                return comando.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
     }
 }
