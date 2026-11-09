@@ -14,9 +14,6 @@ namespace Entidades
         private int IdProvinciaSucursal;
         private String DireccionSucursal;
 
-        public Sucursal()
-        { }
-
         public int getIdSucursal()
         {
             return IdSucursal;

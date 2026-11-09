@@ -1,12 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Datos;
+using Entidades;
 
 namespace Negocio
 {
-    internal class NegocioSucursal
+    public class NegocioSucursal
     {
+        public int eliminarSucursal(int id)
+        {
+            Sucursal suc = new Sucursal();
+            suc.setIdSucursal(id);
+
+            DaoSucursal dao = new DaoSucursal();
+
+            return dao.eliminarSucursal(suc);
+        }
     }
 }

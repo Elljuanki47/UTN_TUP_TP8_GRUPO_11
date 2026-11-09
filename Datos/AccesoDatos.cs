@@ -10,7 +10,7 @@ namespace Datos
 {
     internal class AccesoDatos
     {
-        String rutaBDSucursales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        String rutaBDSucursales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         private SqlConnection ObtenerConexion()
         {
